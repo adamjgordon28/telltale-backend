@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.find_or_create_by(params)
+    @character = Character.find_or_create_by(content: params[:content].to_s)
     render json: @character
   end
 

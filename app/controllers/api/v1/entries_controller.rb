@@ -1,5 +1,5 @@
 class Api::V1::EntriesController < ApplicationController
-  
+
 
     def index
       @entry= Entry.all
@@ -12,8 +12,7 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def create
-
-      entry = Entry.find_or_create_by(content: params[:content].to_s)
+      entry = Entry.find_or_create_by(user_id: params[:user_id],content: params[:content].to_s)
       render json: entry
     end
 
