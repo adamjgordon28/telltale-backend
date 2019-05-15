@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 2019_05_14_230241) do
     t.string "bio"
     t.string "location"
     t.integer "age"
-    t.datetime "user_since"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

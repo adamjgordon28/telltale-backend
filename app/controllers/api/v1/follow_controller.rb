@@ -1,4 +1,4 @@
-class FollowsController < ApplicationController
+class Api::V1::FollowsController < ApplicationController
 
   def index
     @follows= Follow.all

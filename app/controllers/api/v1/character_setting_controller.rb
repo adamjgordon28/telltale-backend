@@ -1,4 +1,4 @@
-class CharacterSettingsController < ApplicationController
+class Api::V1::CharacterSettingsController < ApplicationController
 
   def index
     @character_settings= CharacterSetting.all

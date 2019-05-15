@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
 
   def index
     @users= User.all
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_or_create_by(params)
+    @user = User.find_or_create_by(user_params)
     render json: @user
   end
 
@@ -26,4 +26,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
+
+  def user_params
+  params.require(:user).permit(:name, :bio, :location, :age)
+  end
+
+
 end
