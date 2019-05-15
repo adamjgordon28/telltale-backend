@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :characters
         resources :settings
         resources :users
-        resources :charactersettings
+        resources :character_settings
         resources :follows
       end
     end
