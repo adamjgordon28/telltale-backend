@@ -11,7 +11,7 @@ class Api::V1::FollowsController < ApplicationController
   end
 
   def create
-    @follow = Follow.find_or_create_by(params)
+    @follow = Follow.find_or_create_by(follow_params)
     render json: @follow
   end
 
@@ -25,5 +25,9 @@ class Api::V1::FollowsController < ApplicationController
   def destroy
     @follow = Follow.find(params[:id])
     @follow.destroy
+  end
+
+  def follow_params
+  params.require(:character_setting).permit(:following_since, :user_id, :following_id)
   end
 end

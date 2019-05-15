@@ -11,7 +11,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.find_or_create_by(content: params[:content].to_s)
+    @character = Character.find_or_create_by(character_params)
     render json: @character
   end
 
@@ -25,5 +25,9 @@ class Api::V1::CharactersController < ApplicationController
   def destroy
     @character = Character.find(params[:id])
     @character.destroy
+  end
+
+  def character_params
+  params.require(:character).permit(:name, :description, :entry_id)
   end
 end

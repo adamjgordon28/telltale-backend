@@ -11,7 +11,7 @@ class Api::V1::CharacterSettingsController < ApplicationController
   end
 
   def create
-    @character_setting = CharacterSetting.find_or_create_by(params)
+    @character_setting = CharacterSetting.find_or_create_by(character_setting_params)
     render json: @character_setting
   end
 
@@ -25,5 +25,9 @@ class Api::V1::CharacterSettingsController < ApplicationController
   def destroy
     @character_setting = CharacterSetting.find(params[:id])
     @character_setting.destroy
+  end
+
+  def character_setting_params
+  params.require(:character_setting).permit(:description, :character_id, :setting_id)
   end
 end

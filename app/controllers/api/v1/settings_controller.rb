@@ -10,7 +10,7 @@ class Api::V1::SettingsController < ApplicationController
   end
 
   def create
-    @setting = Setting.find_or_create_by(params)
+    @setting = Setting.find_or_create_by(setting_params)
     render json: @setting
   end
 
@@ -24,6 +24,10 @@ class Api::V1::SettingsController < ApplicationController
   def destroy
     @setting = Setting.find(params[:id])
     @setting.destroy
+  end
+
+  def setting_params
+  params.require(:setting).permit(:name, :description, :entry_id)
   end
 
 end

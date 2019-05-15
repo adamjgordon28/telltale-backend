@@ -12,7 +12,7 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def create
-      entry = Entry.find_or_create_by(user_id: params[:user_id],content: params[:content].to_s)
+      entry = Entry.find_or_create_by(entry_params)
       render json: entry
     end
 
@@ -28,5 +28,7 @@ class Api::V1::EntriesController < ApplicationController
       @entry.destroy
     end
 
-
+    def entry_params
+    params.require(:entry).permit(:title, :description, :content, :genre, :user_id)
+    end
   end
