@@ -5,9 +5,11 @@ Rails.application.routes.draw do
         resources :entries
         resources :characters
         resources :settings
-        resources :users
         resources :character_settings
         resources :follows
+        resources :users
+        post '/login', to: 'auth#create'
+        get '/profile', to: 'users#profile'
       end
     end
   end
