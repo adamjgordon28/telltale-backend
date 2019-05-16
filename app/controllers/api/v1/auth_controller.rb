@@ -1,10 +1,8 @@
 class Api::V1::AuthController < ApplicationController
 
-skip_before_action :authorized, only: [:create]
 
   def create
     user = User.find_by(username: params[:username])
-
 
     if user && user.authenticate(params[:password])
       token = encode_token(user.id)
@@ -12,7 +10,7 @@ skip_before_action :authorized, only: [:create]
       # render json: user
       render json: {user: UserSerializer.new(user), token: token}
     else
-      render json: {errors: "You dun goofed!"}
+      render json: {errors: "Could not log in"}
     end
   end
 
@@ -20,7 +18,7 @@ skip_before_action :authorized, only: [:create]
     if curr_user
       render json: curr_user
     else
-      render json: {errors: "You dun goofed!"}
+      render json: {errors: "Could not log in"}
     end
   end
 

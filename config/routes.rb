@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :follows
         resources :users
         post '/login', to: 'auth#create'
+        get '/auto-login', to: 'auth#auto_login'
         get '/profile', to: 'users#profile'
       end
     end
