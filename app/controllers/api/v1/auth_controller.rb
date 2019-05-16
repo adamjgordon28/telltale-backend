@@ -8,8 +8,13 @@ skip_before_action :authorized, only: [:create]
       @token = eoncode_token({ user_id: @user.id})
         render json: { user: UserSerializer.new(@user), jwt: @token }, status :accepted
     else
-      render json: { message: 'Invali username or password'}, status: :unauthorized
+      render json: { message: 'Invalid username or password'}, status: :unauthorized
     end
+  end
+
+  private
+
+  def user_login_params
   end
 
 end

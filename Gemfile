@@ -66,3 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "dotenv-rails", "~> 2.7"
 
 gem "jwt", "~> 2.1"
+
+gem "env", "~> 0.3.0"
+
+gem "bcrypt", "~> 3.1"

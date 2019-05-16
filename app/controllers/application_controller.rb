@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authorized
+  # before_action :authorized
 
 
   def encode_token(payload) #{ user_id: 2 }
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
-    render json: { message: 'PLease log in' }, status :unauthorized unless logged_in?
+    render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
 
 end
