@@ -70,3 +70,5 @@ gem "jwt", "~> 2.1"
 gem "env", "~> 0.3.0"
 
 gem "bcrypt", "~> 3.1"
+
+gem "active_model_serializers"
