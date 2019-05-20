@@ -13,7 +13,7 @@ class Api::V1::EntriesController < ApplicationController
 
     def create
       entry = Entry.find_or_create_by(entry_params)
-      render json: entry
+      render json: entry, serializer: CustomEntrySerializer
     end
 
     def update
