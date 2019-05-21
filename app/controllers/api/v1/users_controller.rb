@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    user = User.create(username: params[:username], password: params[:password], name: params[:name], bio: params[:bio], location: params[:location], age: params[:age])
+    user = User.create(username: params[:username], password: params[:password], name: params[:name], bio: params[:bio], location: params[:location], age: params[:age], img_url: params[:img_url])
     if user.valid?
       @token = encode_token(user.id)
       render json: {user: UserSerializer.new(user), token: @token }, status: :created
