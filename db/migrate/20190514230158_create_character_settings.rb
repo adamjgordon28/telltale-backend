@@ -4,6 +4,7 @@ class CreateCharacterSettings < ActiveRecord::Migration[5.2]
       t.string :description
       t.integer :character_id
       t.integer :setting_id
+      t.integer :chapter
       t.timestamps
     end
   end

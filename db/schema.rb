@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_230241) do
     t.string "description"
     t.integer "character_id"
     t.integer "setting_id"
+    t.integer "chapter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
