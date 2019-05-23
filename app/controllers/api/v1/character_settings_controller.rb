@@ -28,6 +28,6 @@ class Api::V1::CharacterSettingsController < ApplicationController
   end
 
   def character_setting_params
-  params.require(:character_setting).permit(:description, :character_id, :setting_id)
+  params.require(:character_setting).permit(:description, :character_id, :setting_id, :chapter)
   end
 end
