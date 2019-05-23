@@ -17,7 +17,7 @@ class Api::V1::CharacterSettingsController < ApplicationController
 
   def update
     @character_setting = CharacterSetting.find(params[:id])
-    @character_setting.update(params)
+    @character_setting.update(setting_id: params[:setting_id], character_id: params[:character_id], chapter: params[:chapter], description: params[:description])
     @character_setting.save
     render json: @character_setting
   end

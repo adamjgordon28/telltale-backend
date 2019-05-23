@@ -17,7 +17,7 @@ class Api::V1::CharactersController < ApplicationController
 
   def update
     @character = Character.find(params[:id])
-    @character.update(params)
+    @character.update(name: params[:name], description: params[:description])
     @character.save
     render json: @character
   end
