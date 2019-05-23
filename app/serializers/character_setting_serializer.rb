@@ -1,4 +1,8 @@
 class CharacterSettingSerializer < ActiveModel::Serializer
-  attributes :id, :character_id, :setting_id, :chapter, :description
+  attributes :id, :character, :setting, :chapter, :description
+
+  belongs_to :character
+  belongs_to :setting
+
 
 end
