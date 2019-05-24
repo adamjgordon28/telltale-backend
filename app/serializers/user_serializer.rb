@@ -5,12 +5,5 @@ class UserSerializer < ActiveModel::Serializer
 
 
 
-  # def entries
-  #   self.object.entries.map do |entry|
-  #     {entry_id: entry.id,
-  #       title: entry.title,
-  #       genre: entry.genre,
-  #       description: entry.description}
-  #     end
-  #   end
+  
 end

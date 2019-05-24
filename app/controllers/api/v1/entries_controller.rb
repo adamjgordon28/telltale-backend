@@ -18,9 +18,9 @@ class Api::V1::EntriesController < ApplicationController
 
     def update
       entry = Entry.find(params[:id])
-      entry.update(content: params[:content].to_s)
+      entry.update(title: params[:title], description: params[:description], genre: params[:genre],content: params[:content].to_s)
       entry.save
-      render json: entry, serializer: CustomEntrySerializer
+      render json: entry
     end
 
     def destroy
