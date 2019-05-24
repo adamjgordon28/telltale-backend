@@ -7,8 +7,8 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def show
-      entry = Entry.find(params[:id])
-      render json: entry, serializer: CustomEntrySerializer
+      @entry = Entry.find(params[:id])
+      render json: @entry
     end
 
     def create
