@@ -25,6 +25,7 @@ class Api::V1::CharacterSettingsController < ApplicationController
   def destroy
     @character_setting = CharacterSetting.find(params[:id])
     @character_setting.destroy
+    render json: @character_setting
   end
 
   def character_setting_params
