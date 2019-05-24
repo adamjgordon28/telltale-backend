@@ -18,7 +18,7 @@ class Api::V1::EntriesController < ApplicationController
 
     def update
       entry = Entry.find(params[:id])
-      entry.update(title: params[:title], description: params[:description], genre: params[:genre],content: params[:content].to_s)
+      entry.update(entry_params)
       entry.save
       render json: entry
     end
