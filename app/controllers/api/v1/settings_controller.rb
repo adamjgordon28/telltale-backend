@@ -16,7 +16,7 @@ class Api::V1::SettingsController < ApplicationController
 
   def update
     @setting = Setting.find(params[:id])
-    @setting.update(params)
+    @setting.update(name: params[:name], description: params[:description])
     @setting.save
     render json: @setting
   end

@@ -1,4 +1,4 @@
 class Setting < ApplicationRecord
   belongs_to  :entry
-  has_many :character_settings
+  has_many :character_settings, :dependent => :destroy
 end
