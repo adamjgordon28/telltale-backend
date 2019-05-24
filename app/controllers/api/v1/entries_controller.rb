@@ -7,8 +7,8 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def show
-      @entry = Entry.find(params[:id])
-      render json: @entry
+      entry = Entry.find(params[:id])
+      render json: entry, serializer: CustomEntrySerializer
     end
 
     def create
@@ -17,10 +17,10 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def update
-      @entry = Entry.find(params[:id])
-      @entry.update(content: params[:content].to_s)
-      @entry.save
-      render json: @entry
+      entry = Entry.find(params[:id])
+      entry.update(content: params[:content].to_s)
+      entry.save
+      render json: entry, serializer: CustomEntrySerializer
     end
 
     def destroy

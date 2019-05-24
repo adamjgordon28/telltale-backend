@@ -24,6 +24,7 @@ class Api::V1::SettingsController < ApplicationController
   def destroy
     @setting = Setting.find(params[:id])
     @setting.destroy
+    render json: @setting
   end
 
   def setting_params
