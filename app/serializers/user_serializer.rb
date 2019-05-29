@@ -3,6 +3,14 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :entries, serializer: CustomEntrySerializer
   has_many :follows
+  has_many :followings, serializer: FollowSerializer
+
+
+  def followings
+    Follow.all.filter do |follow|
+      follow.following_id == self.object.id
+    end
+  end
 
 
 
