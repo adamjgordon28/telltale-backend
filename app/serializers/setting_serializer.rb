@@ -3,6 +3,5 @@ class SettingSerializer < ActiveModel::Serializer
 
 
   has_many :character_settings
-
-    belongs_to :entry, serializer: CustomEntrySerializer
+  belongs_to :entry, serializer: CustomEntrySerializer
 end
