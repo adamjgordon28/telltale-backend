@@ -22,7 +22,8 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(params)
+    @user.update(username: params[:username], name: params[:name], bio: params[:bio], location: params[:location], age: params[:age], img_url: params[:img_url])
+
     @user.save
     render json: @user
   end
