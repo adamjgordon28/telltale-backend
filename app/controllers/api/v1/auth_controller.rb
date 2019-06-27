@@ -10,7 +10,7 @@ class Api::V1::AuthController < ApplicationController
       # render json: user
       render json: {user: UserSerializer.new(user), token: token}
     else
-      render json: {errors: "Could not log in"}
+      render json: {errors: "Could not find this username matched with this password. Please try again."}
     end
   end
 
