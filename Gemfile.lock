@@ -55,6 +55,7 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     bcrypt (3.1.12)
+    bcrypt_pbkdf (1.0.1)
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -102,6 +103,7 @@ GEM
     dotenv-rails (2.7.2)
       dotenv (= 2.7.2)
       railties (>= 3.2, < 6.1)
+    ed25519 (1.2.4)
     env (0.3.0)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -234,6 +236,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1)
+  bcrypt_pbkdf (~> 1.0, >= 1.0.1)
   bootsnap (>= 1.1.0)
   byebug
   capistrano (~> 3.11)
@@ -243,6 +246,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   dotenv-rails (~> 2.7)
+  ed25519 (~> 1.2, >= 1.2.4)
   env (~> 0.3.0)
   jbuilder (~> 2.5)
   jwt (~> 2.1)
