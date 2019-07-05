@@ -11,7 +11,7 @@ Rails.application.routes.draw do
         post '/login', to: 'auth#create'
         get '/auto_login', to: 'auth#auto_login'
         get '/profile', to: 'users#profile',
-        root 'topics#index'
+        root to: 'topics#index'
       end
     end
   end
