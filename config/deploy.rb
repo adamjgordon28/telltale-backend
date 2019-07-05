@@ -10,7 +10,7 @@ set :repo_url, "git@github.com:adamjgordon28/telltale-backend.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/telltale_backend"
 
-append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_files, "config/database.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 # Default value for :format is :airbrussh.
