@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'topics#index'
   Rails.application.routes.draw do
+    root to: 'topics#index'
     namespace :api do
       namespace :v1 do
         resources :entries
