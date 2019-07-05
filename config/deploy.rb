@@ -4,6 +4,8 @@ lock "~> 3.11.0"
 set :application, "telltale_backend"
 set :repo_url, "git@github.com:adamjgordon28/telltale-backend.git"
 
+set :passenger_restart_with_touch, true
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
