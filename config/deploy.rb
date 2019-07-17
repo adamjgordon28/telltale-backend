@@ -16,16 +16,16 @@ append :linked_files, "config/database.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 namespace :rails do
-  desc "Run the console on a remote server."
+  desc 'Open a rails console `cap [staging] rails:console [server_index default: 0]`'
   task :console do
-    on roles(:app) do |h|
-      execute_interactively "RAILS_ENV=#{fetch(:rails_env)} bundle exec rails console", h.user
-    end
-  end
+    server = roles(:app)[ARGV[2].to_i]
 
-  def execute_interactively(command, user)
-    info "Connecting with #{user}@#{host}"
-    cmd = "ssh #{user}@#{host} -p 22 -t 'cd #{fetch(:deploy_to)}/current && #{command}'"
+    puts "Opening a console on: #{server.hostname}…."
+
+    cmd = "ssh #{server.user}@#{server.hostname} -t 'cd #{fetch(:deploy_to)}/current && RAILS_ENV=#{fetch(:rails_env)} bundle exec rails console'"
+
+    puts cmd
+
     exec cmd
   end
 end
